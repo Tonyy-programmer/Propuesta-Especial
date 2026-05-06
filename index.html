@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sorpresa Romantica</title>
+</head>
+<body>
+    <div id="lluviaCorazones" class="lluvia-corazones" aria-hidden="true"></div>
+    <div id="lluviaConfeti" class="lluvia-confeti" aria-hidden="true"></div>
+    <div id="notasFlotantes" class="notas-flotantes" aria-hidden="true"></div>
+
+    <div id="pantallaBienvenida" class="pantalla-bienvenida">
+        <div class="bienvenida-card">
+            <p id="bienvenidaTag" class="bienvenida-tag">Para alguien especial</p>
+            <h1>Tengo algo para ti</h1>
+            <p id="fraseAleatoria" class="frase-aleatoria"></p>
+            <div id="cuentaRegresiva" class="cuenta-regresiva" aria-live="polite">3</div>
+            <button id="btnIniciarSorpresa" class="btn-iniciar" type="button">Empezar sorpresa</button>
+        </div>
+    </div>
+
+    <button id="btnMusica" class="btn-musica" type="button">M&uacute;sica: OFF</button>
+    <audio id="musicaFondo" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="header">
+        <div class="box1"><h1>Sorpresa para ti :3</h1></div>
+        <div class="box2"><h2 id="frasePrincipal">Eres mi persona favorita, hoy y siempre.&#10084;</h2></div>
+    </div>
+
+    <div class="button">
+        <button type="button" id="btnMostrarPregunta">Toca aqu&iacute;</button>
+    </div>
+
+    <div class="mensajeFinal" style="display: none;" id="mensajeFinal">
+        <div id="bloqueMiniJuego" class="mini-juego">
+            <h2>Mini juego para desbloquear la pregunta</h2>
+            <p id="textoMiniJuego">Atrapa 5 corazones para continuar &#128152;</p>
+            <div class="mini-juego-area" id="miniJuegoArea">
+                <button id="corazonJuego" class="corazon-juego" type="button" aria-label="Atrapar corazon">&#10084;</button>
+                <div id="contadorJuego" class="contador-juego">0 / 5</div>
+            </div>
+        </div>
+
+        <div id="bloquePregunta" class="bloque-pregunta" hidden>
+            <h1 id="preguntaFinal" class="Frasefinal">Quieres ser mi pareja? &#10084;</h1>
+            <img src="descarga.jpg" width="350" class="Foto" alt="Foto sorpresa">
+
+            <div class="galeria" id="galeria">
+                <button class="galeria-btn" id="galPrev" type="button" aria-label="Foto anterior">&#10094;</button>
+                <div class="galeria-visor">
+                    <img id="galeriaImagen" src="descarga.jpg" alt="Foto de recuerdo">
+                    <p id="galeriaCaption" class="galeria-caption"></p>
+                </div>
+                <button class="galeria-btn" id="galNext" type="button" aria-label="Foto siguiente">&#10095;</button>
+            </div>
+
+            <div class="opciones" id="opciones">
+                <button class="btn-respuesta si" id="btnSi" type="button">S&iacute;</button>
+                <button class="btn-respuesta no" id="btnNo" type="button">No</button>
+            </div>
+
+            <p id="contadorNo" class="contador-no"></p>
+            <p id="respuestaTexto" class="respuesta-texto"></p>
+
+            <div class="sobre-wrap">
+                <button id="btnCarta" class="btn-carta" type="button">Abrir carta</button>
+                <div id="sobreCarta" class="sobre-carta" aria-hidden="true">
+                    <div class="sobre-flap"></div>
+                    <div id="cartaPanel" class="carta-panel">
+                        <h3 id="cartaTitulo">Para alguien especial</h3>
+                        <p>
+                            Gracias por llegar a mi vida. Me haces sonre&iacute;r, me haces pensar bonito y contigo
+                            todo se siente m&aacute;s especial. Esta p&aacute;gina es una mini forma de decirte lo mucho que
+                            me importas. &#10084;
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pantallaFinal" class="pantalla-final" aria-hidden="true">
+        <div class="pantalla-final__card">
+            <h2 id="tituloFinal">&#10084; Oficialmente juntos &#10084;</h2>
+            <p id="textoFinal">Sab&iacute;a que este momento iba a llegar.</p>
+            <p id="fechaOficial" class="fecha-oficial"></p>
+            <p id="diasJuntos" class="dias-juntos"></p>
+            <button id="cerrarFinal" class="btn-cerrar-final" type="button">Seguir viendo</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
